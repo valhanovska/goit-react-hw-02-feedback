@@ -1,0 +1,18 @@
+.text {
+  padding: 5px;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.good {
+  background-color: rgb(17, 150, 17);
+}
+
+.neutral {
+  background-color: rgb(27, 46, 189);
+}
+
+.bad {
+  background-color: rgb(248, 1, 1);
+}
