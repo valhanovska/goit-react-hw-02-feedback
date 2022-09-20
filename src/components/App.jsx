@@ -3,6 +3,7 @@ import Notification from './Notification';
 import Section from './Section';
 import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions';
+import s from './App.module.css';
 
 export class App extends Component {
   state = {
@@ -11,10 +12,7 @@ export class App extends Component {
     bad: 0,
   };
 
-  options = state => Object.keys(state);
-
   onLeaveFeedback = option => {
-    // const { name } = event.target;
     this.setState(prevState => {
       return {
         [option]: prevState[option] + 1,
@@ -33,19 +31,10 @@ export class App extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          height: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#010101',
-        }}
-      >
+      <div className={s.container}>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={this.options(this.state)}
+            options={Object.keys(this.state)}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
